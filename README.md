@@ -20,6 +20,8 @@ Role Variables
 Dependencies
 ------------
 
+- selinux
+
 Example Playbook
 ----------------
 
