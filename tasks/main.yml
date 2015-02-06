@@ -1,23 +1,14 @@
 ---
 # tasks file for ntp
 
-- name: Install ntp
-  yum: name={{ item }} state=present
-  with_items:
-    - ntp
-    - ntpdate
+- name: Include distribution specific variables
+  include_vars: "{{ ansible_distribution }}.yml"
   tags: ntp
 
-- name: Create ntp configuration file
-  template: >
-    src=ntp.conf.j2
-    dest=/etc/ntp.conf
-    owner=root
-    group=root
-    mode=0644
-  notify: restart ntpd
+- include: CentOS.yml
+  when: ansible_distribution == "CentOS"
   tags: ntp
 
-- name: Start ntpd service
-  service: name=ntpd state=started enabled=yes
+- include: Ubuntu.yml
+  when: ansible_distribution == "Ubuntu"
   tags: ntp

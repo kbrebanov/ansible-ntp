@@ -12,15 +12,19 @@ Role Variables
 --------------
 
     # NTP servers
-    ntp_server_0: 0.centos.pool.ntp.org
-    ntp_server_1: 1.centos.pool.ntp.org
-    ntp_server_2: 2.centos.pool.ntp.org
-    ntp_server_3: 3.centos.pool.ntp.org
+    ntp_servers:
+      - 0.ubuntu.pool.ntp.org
+      - 1.ubuntu.pool.ntp.org
+      - 2.ubuntu.pool.ntp.org
+      - 3.ubuntu.pool.ntp.org
+
+    # NTP drift file
+    ntp_driftfile: /var/lib/ntp/ntp.drift
 
 Dependencies
 ------------
 
-- selinux
+- selinux (CentOS)
 
 Example Playbook
 ----------------
@@ -29,13 +33,15 @@ Example Playbook
 
     - hosts: all
       roles:
+         - { role: selinux, when: ansible_distribution == "CentOS" }
          - { role: ntp }
 
 2) Install and configure NTP specifying a NTP server
 
     - hosts: all
       roles:
-         - { role: ntp, ntp_server_0: 127.0.0.1 }
+         - { role: selinux, when: ansible_distribution == "CentOS" }
+         - { role: ntp, ntp_servers: ['0.centos.pool.ntp.org'] }
 
 License
 -------

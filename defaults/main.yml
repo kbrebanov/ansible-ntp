@@ -1,6 +1,9 @@
 ---
 # defaults file for ntp
-ntp_server_0: 0.centos.pool.ntp.org
-ntp_server_1: 1.centos.pool.ntp.org
-ntp_server_2: 2.centos.pool.ntp.org
-ntp_server_3: 3.centos.pool.ntp.org
+
+ntp_servers:
+  - 0.ubuntu.pool.ntp.org
+  - 1.ubuntu.pool.ntp.org
+  - 2.ubuntu.pool.ntp.org
+  - 3.ubuntu.pool.ntp.org
+ntp_driftfile: /var/lib/ntp/ntp.drift

@@ -1,0 +1,4 @@
+---
+# vars file for ntp (Ubuntu specific)
+
+ntp_service_name: ntp

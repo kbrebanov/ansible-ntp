@@ -1,0 +1,4 @@
+---
+# vars file for ntp (CentOS specific)
+
+ntp_service_name: ntpd
