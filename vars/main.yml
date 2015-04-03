@@ -1,2 +1,7 @@
 ---
 # vars file for ntp
+
+ntp_packages:
+  - ntp
+  - ntpdate
+ntp_driftfile: /var/lib/ntp/ntp.drift
