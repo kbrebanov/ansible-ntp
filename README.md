@@ -1,6 +1,8 @@
 ntp
 ===
 
+[![Ansible Galaxy](https://img.shields.io/badge/galaxy-kbrebanov.ntp-660198.svg)](https://galaxy.ansible.com/list#/roles/3307)
+
 Installs and configures NTP.
 
 Requirements
