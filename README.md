@@ -27,17 +27,20 @@ Example Playbook
 ----------------
 
 Install and configure NTP
-```
+```yaml
 - hosts: all
   roles:
-    - { role: kbrebanov.ntp }
+    - kbrebanov.ntp
 ```
 
 Install and configure NTP specifying a NTP server
-```
+```yaml
 - hosts: all
+  vars:
+    ntp_servers:
+      - 0.pool.ntp.org
   roles:
-    - { role: kbrebanov.ntp, ntp_servers: ["0.pool.ntp.org"] }
+    - kbrebanov.ntp
 ```
 
 License
