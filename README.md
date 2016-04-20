@@ -20,8 +20,7 @@ Role Variables
 Dependencies
 ------------
 
-CentOS:
-  - kbrebanov.selinux
+None
 
 Example Playbook
 ----------------
