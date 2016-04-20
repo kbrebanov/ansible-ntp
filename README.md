@@ -8,14 +8,14 @@ Installs and configures NTP.
 Requirements
 ------------
 
-This role requires Ansible 1.4 or higher.
+This role requires Ansible 1.9 or higher.
 
 Role Variables
 --------------
 
-| Name        | Default                                                                                                                                                                                                        | Description |
-|-------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------|
-| ntp_servers | [ "0.{{ ansible_distribution\|lower }}.pool.ntp.org", "1.{{ ansible_distribution\|lower }}.pool.ntp.org", "2.{{ ansible_distribution\|lower }}.pool.ntp.org", "3.{{ ansible_distribution\|lower }}.pool.ntp.org" ] | NTP servers |
+| Name        | Default                       | Description                                                                                                                                                                                        |
+|:------------|:------------------------------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| ntp_servers | [ "0.{{ ansible_distribution\ | lower }}.pool.ntp.org", "1.{{ ansible_distribution\|lower }}.pool.ntp.org", "2.{{ ansible_distribution\|lower }}.pool.ntp.org", "3.{{ ansible_distribution\|lower }}.pool.ntp.org" ] | NTP servers |
 
 Dependencies
 ------------
