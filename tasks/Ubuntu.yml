@@ -2,6 +2,12 @@
 # tasks file for ntp (Ubuntu specific)
 
 - name: Install ntp packages
-  apt: name={{ item }} state=present update_cache=yes
-  with_items: ntp_packages
-  tags: ntp
+  become: yes
+  apt:
+    name: "{{ item }}"
+    state: present
+    update_cache: yes
+  with_items:
+    - "{{ ntp_packages }}"
+  tags:
+    - ntp

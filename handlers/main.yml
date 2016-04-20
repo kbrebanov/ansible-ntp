@@ -2,5 +2,9 @@
 # handlers file for ntp
 
 - name: restart ntp
-  service: name={{ ntp_service_name }} state=restarted
-  tags: ntp
+  become: yes
+  service:
+    name: "{{ ntp_service_name }}"
+    state: restarted
+  tags:
+    - ntp
