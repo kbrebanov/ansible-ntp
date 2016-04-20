@@ -1,7 +1,7 @@
 ntp
 ===
 
-[![Ansible Role](https://img.shields.io/ansible/role/3307.svg)](https://galaxy.ansible.com/list#/roles/3307)
+[![Build Status](https://travis-ci.org/kbrebanov/ansible-ntp.svg?branch=master)](https://travis-ci.org/kbrebanov/ansible-ntp)
 
 Installs and configures NTP.
 
