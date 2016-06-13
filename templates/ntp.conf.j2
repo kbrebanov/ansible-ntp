@@ -6,6 +6,9 @@ restrict default kod nomodify notrap nopeer noquery
 restrict -6 default kod nomodify notrap nopeer noquery
 restrict 127.0.0.1
 restrict -6 ::1
+{% if ansible_distribution_release == "xenial" %}
+restrict source notrap nomodify noquery
+{% endif %}
 
 {% for ntp_server in ntp_servers %}
 server {{ ntp_server }} iburst
